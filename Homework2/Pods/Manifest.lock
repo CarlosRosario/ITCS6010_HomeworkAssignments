@@ -1,0 +1,17 @@
+PODS:
+  - ENSwiftSideMenu (0.1.1)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+
+DEPENDENCIES:
+  - ENSwiftSideMenu (~> 0.1.1)
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+
+PODFILE CHECKSUM: afd2faee3e9c9bfed7b1ddf055dbe2f149eae8f7
+
+COCOAPODS: 1.0.1
