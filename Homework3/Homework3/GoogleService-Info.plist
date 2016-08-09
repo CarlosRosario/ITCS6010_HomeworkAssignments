@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>269735347510-4m2c463sa9uslmk90d4rapn150hkmppe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.269735347510-4m2c463sa9uslmk90d4rapn150hkmppe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCq2oom3hq9gsm0xjo6_gDje9IJO6Xz8jM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>269735347510</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ITCS6010.rosario.Homework3</string>
+	<key>PROJECT_ID</key>
+	<string>ios-homework3-d8e00</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios-homework3-d8e00.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:269735347510:ios:4b9c5a5b0f382a0e</string>
+	<key>DATABASE_URL</key>
+	<string>https://ios-homework3-d8e00.firebaseio.com</string>
+</dict>
+</plist>

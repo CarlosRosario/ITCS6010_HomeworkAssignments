@@ -79,7 +79,7 @@ class SideMenuTableViewCell: UITableViewCell {
             NSNotificationCenter.defaultCenter().removeObserver(self)
         }
         else {
-            // Make sure to play audio over existing audio
+            // Make sure not to play audio over existing audio
             if(isAnyAudioPlaying()){
                 return
             }
@@ -87,19 +87,26 @@ class SideMenuTableViewCell: UITableViewCell {
             isAudioPlaying = false
             
             // Set up AVPlayer to play every clip in the playlist - i want this AVPlayer to be completely separate from the AVPlayer that handles individual clips
-            let url = convertStringToNSURL(PlayListData.PlayListDataStruct.playlist[currentClip].audioURL)
-            allPlayListPlayerItem = AVPlayerItem(URL: url!)
-            allPlayListPlayer = AVPlayer(playerItem: self.allPlayListPlayerItem!)
-            
-            // Register to be notified for when a clip plays. This way i know when to play the "next" clip in the playlist
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SideMenuTableViewCell.playerDidFinishPlaying(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-            
-            // Play clip
-            allPlayListPlayer.play()
-            
-            // Update button text
-            playAllAudioButton.setTitle("Stop Playing", forState: UIControlState.Normal)
-            PlayListData.PlayListDataStruct.isAllPlaying = true
+            if !PlayListData.PlayListDataStruct.playlist.isEmpty{
+                let url = convertStringToNSURL(PlayListData.PlayListDataStruct.playlist[currentClip].audioURL)
+                allPlayListPlayerItem = AVPlayerItem(URL: url!)
+                allPlayListPlayer = AVPlayer(playerItem: self.allPlayListPlayerItem!)
+                
+                // Register to be notified for when a clip plays. This way i know when to play the "next" clip in the playlist
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SideMenuTableViewCell.playerDidFinishPlaying(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+                
+                // Play clip
+                allPlayListPlayer.volume = 1
+                allPlayListPlayer.play()
+                
+                // Update button text
+                playAllAudioButton.setTitle("Stop Playing", forState: UIControlState.Normal)
+                PlayListData.PlayListDataStruct.isAllPlaying = true
+            }
+            else {
+                // show toast that playlist is empty
+                print("playlist is empty")
+            }
         }
     }
     
@@ -160,7 +167,7 @@ class SideMenuTableViewCell: UITableViewCell {
         //get section of interest i.e: first section (0)
         for (var row = 0; row < parentTableView!.numberOfRowsInSection(1); row = row + 1)
         {
-            var indexPath = NSIndexPath(forRow: row, inSection: 1)
+            let indexPath = NSIndexPath(forRow: row, inSection: 1)
             //following line of code is for invisible cells
             parentTableView!.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             
